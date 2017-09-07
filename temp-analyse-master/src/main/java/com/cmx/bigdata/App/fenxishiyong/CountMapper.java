@@ -40,8 +40,8 @@ public class CountMapper extends Mapper<LongWritable,Text,MyKey,MyValue>{
 		//构造myvalue
 		MyValue myValue = new MyValue();
 		myValue.setMax(Integer.parseInt(split[3]));
-		myValue.setDiff(Integer.parseInt(split[5]));
 		myValue.setMin(Integer.parseInt(split[4]));
+		myValue.setDiff(Integer.parseInt(split[5]));
 		myValue.setAvg(Integer.parseInt(split[6]));
 		context.write(myKey, myValue);
 		context.getCounter("count_by_"+place+"_"+date, "mapper").increment(1);
