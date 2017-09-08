@@ -56,7 +56,10 @@ public class MyKey implements WritableComparable<MyKey> {
 
 	@Override
 	public int compareTo(MyKey o) {
+		if(quantity!=o.quantity)
 		return o.quantity - quantity;
+		
+		return o.word.length() - word.length();
 	}
 
 	@Override
