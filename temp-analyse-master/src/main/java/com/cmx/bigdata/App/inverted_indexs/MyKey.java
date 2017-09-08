@@ -56,14 +56,13 @@ public class MyKey implements WritableComparable<MyKey> {
 
 	@Override
 	public int compareTo(MyKey o) {
-		if(quantity!=o.quantity)
+		if(word!=o.word)
+			return o.word.compareTo(word);
 		return o.quantity - quantity;
-		
-		return o.word.length() - word.length();
 	}
-
+	
 	@Override
 	public String toString() {
-		return quantity + "\t" + name + "\t" +word;
+		return word + "\t" + name + "\t" +quantity;
 	}
 }
